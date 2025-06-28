@@ -1,0 +1,187 @@
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    
+}
+.container{
+    flex:1;
+}
+/* Navbar */
+#navbarNavAltMarkup{
+    background-color: white;
+    z-index: 100;
+}
+.navbar{
+    height: 5rem;
+    background-color: white;
+    position: relative;
+    top: 0px;
+}
+.fa-compass{
+    color : red;
+    font-size: 2rem;
+}
+.nav-link{
+    color: black !important;
+    text-align: center;
+}
+
+
+/* Footer */
+footer{
+    margin-top: 2rem;;
+}
+.f-info-links a {
+    text-decoration: none;
+    color: rgb(51, 52, 52);
+}
+
+.f-info-links a:hover {
+    text-decoration: underline;
+}
+
+.f-info{
+    height: 8rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: space-evenly;
+    text-align: center;
+    background-color: #ebebeb;
+}
+
+.f-info-links, .f-info-socials, .f-info-brand{
+    width : 100%;
+    vertical-align: middle;
+}
+
+.f-info-socials i{
+    font-size: 1.5rem;
+}
+
+
+/* Index Page */
+.outermainbox{
+    display: flex;
+    flex-direction: column;
+}
+#mainbox{    
+    position:relative;
+    top: 1px;
+}
+.row{
+    display: flex;
+    flex-direction: row;
+}
+.col{
+    display: flex;
+    flex-direction: column;
+}
+
+.listing-card{
+    border: none !important;
+    margin-bottom: 2rem;
+}
+.card-img-top {
+    border-radius: 1rem !important;
+    width: 100% !important;
+    height: 20rem;
+    object-fit: cover !important;
+}
+
+.card-body{
+    padding:0 !important ;
+}
+
+.card-text p {
+    font-weight:400;
+}
+
+.listing-link{
+    text-decoration: none !important;
+}
+
+.card-img-overlay{
+    opacity: 0;
+}
+/* hover properties are not working  */
+.card-img-overlay:hover{
+    opacity: .2 !important;
+    background-color: rgb(45, 105, 224) !important;
+    color: white !important;
+}
+/* .card-img-overlay{
+
+} */ 
+
+/* show.ejs */
+.show-img {
+    height: 30vh;
+   
+}
+
+.btns{
+    display: flex;
+}
+.btn a{
+    padding-bottom: 0 !important;
+}
+
+.btn a span{
+    margin-bottom: 0 !important;
+}
+.show-card{
+    padding-left: 0;
+    padding-right: 0;
+}
+.edit-btn{
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    background-color: black;
+    color: white;
+    border-radius: .5rem;
+    border: none;
+}
+.del-btn{
+    padding-left: .7rem;
+    padding-right: .7rem;
+    color: white;
+    background-color: red;
+    border-radius: .5rem;
+    border: none;
+}
+
+
+/* Reviews */
+.reviews-box{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.review{    
+    width: 300px;    
+    margin: 1rem;    
+    border: 2px solid grey;
+    
+}
+.review i{
+    font-size: 1.5rem;
+}
+
+#map{
+    border: 2px solid black;
+    height:300px;
+    width:100%;
+}
+
+/* New Page */
+.add-btn{
+    background-color: rgb(232, 44, 44);
+    border-radius: .5rem;
+}
+
+/* Edit Page */
+.editimage{
+    height: 100px !important;
+}

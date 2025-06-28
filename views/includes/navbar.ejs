@@ -1,0 +1,73 @@
+<style>
+  #searchbox{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width:30em;
+    margin: auto;
+    margin-right: 50px;
+  }
+  #searchbar{
+    color: red;
+    width : 100%;
+    vertical-align: middle;
+    border-radius: 1rem;
+    border : 2px solid red;
+    padding: .25rem;
+    padding-left: 1rem;    
+  }
+  #criteriaselect{
+    vertical-align: middle;
+    width: 90px;
+    margin: auto;
+    margin-top: 5px;
+    color: red;
+    
+  }
+</style>
+
+<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top zmax">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/"> <i class="fa-solid fa-compass"></i> </a>
+    <!-- This button will appear at the end to toggle the view -->
+    <button 
+    class="navbar-toggler" 
+    type="button" 
+    data-bs-toggle="collapse" 
+    data-bs-target="#navbarNavAltMarkup" >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link" href="/listings">All Listings</a>
+      </div>
+
+      <div id="searchbox" class=" searchboxx">
+        <textarea name="searchprompt" id="searchbar"  rows="1" class="col-sm-9 col-md-9 col-lg-9" ></textarea>
+        <select name="searchcriteria" id="criteriaselect">
+            <option value="title" selected>Title</option>
+            <option value="location">Location</option>
+            <option value="country">Country</option>
+        </select>       
+      </div>     
+
+
+      <div class="navbar-nav ms-auto">
+
+        <a class="nav-link" href="/listing/new">Airbnb your place</a>
+        <% if(!currUser){ %>
+        <a class="nav-link" href="/user/signup"> <b>Signup</b> </a>
+        <a class="nav-link" href="/user/login"> <b>Login</b>  </a>
+        <% } %>
+        <% if(currUser){ %>
+        <a class="nav-link" href="/user/logout">  <b>Logout</b> </a>
+        <% } %>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/search.js" defer></script>
+
+</nav>

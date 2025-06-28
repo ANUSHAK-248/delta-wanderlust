@@ -1,0 +1,20 @@
+
+    <% for ( let listing of allListings) { %>
+
+        <a href="/listing/show/<%=listing._id%>" class="listing-link">
+
+            <div class="card col listing-card" style="">
+
+                <img src="<%= listing.image.url %>" class="card-img-top" alt="image" >
+
+                <div class="card-img-overlay">book it</div>
+
+                <div class="card-body">
+                    <b> <p class="card-text"><%= listing.title %></p> </b> 
+                    <p>  <%= listing.price.toLocaleString("en-IN") %>/night </p>
+                </div>
+
+            </div>
+        </a>               
+                            
+    <% } %>
