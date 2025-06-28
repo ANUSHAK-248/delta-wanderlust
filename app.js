@@ -101,19 +101,9 @@ app.use(express.json());
 // Shows all the listings initially
 app.get("/listings", wrapAsync(async (req, res) => {
 
-    //  if (!req.isAuthenticated()) {
-    //     req.flash("failure", "You are not logged in as a user");
-    //     return res.redirect("/login");
-    // }
-    // const employer = await Employer.findById(req.user._id).populate("employees");
-    // const employeeslist = employer.employees;
-    // res.locals.success = req.flash("success");
-    // res.locals.failure = req.flash("failure");
     let searchvalue = "";
     let criteriavalue = "title";
-    // res.render("employees/allemployees.ejs", { searchvalue, criteriavalue, employeeslist });
-
-
+   
     const allListings = await Listing.find({}); // {} is neccessary inside () to get all data
     res.render("listings/index.ejs", { searchvalue, criteriavalue,  allListings});
 }))
