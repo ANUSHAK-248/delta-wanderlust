@@ -72,13 +72,13 @@ module.exports.savechanges = async (req, res) => {
     }
     try{
         let oldimgfilename = listing.image.filename;
-        console.log("old file name = ",oldimgfilename);
+        // console.log("old file name = ",oldimgfilename);
         let oldimgurl = listing.image.url;
-        console.log("old file url = ",oldimgurl);
-        console.log("");
+        // console.log("old file url = ",oldimgurl);
+        // console.log("");
         listing = await Listing.findByIdAndUpdate(id,{ ...req.body.listing});
-        console.log("old listing = ",listing);
-        console.log("");
+        // console.log("old listing = ",listing);
+        // console.log("");
 
         async function update(){
         if(req.file){
@@ -89,22 +89,22 @@ module.exports.savechanges = async (req, res) => {
             //  Delete previous image
             cloudinary.uploader.destroy(`${oldimgfilename}`, function (error, result) {
                 if (error) return console.error(error);
-                console.log('Deleted:', oldimgfilename, `from database`);
+                // console.log('Deleted:', oldimgfilename, `from database`);
             });}
             await deletefile();
             listing = await Listing.findByIdAndUpdate(id,{ ...req.body.listing, image : {url : newurl, filename : newfilename } });
             // listing.image.filename = newfilename;
             // listing.image.url = newurl;            
-            console.log(`Deleted ${oldimgfilename} from the databse and put ${newfilename} instead`)            
-            console.log("");
+            // console.log(`Deleted ${oldimgfilename} from the databse and put ${newfilename} instead`)            
+            // console.log("");
         }}
         await update();
-        console.log("Final new listing = ",listing);
-        console.log(`Listing ${listing.title} has been editted and saved successfully`);
+        // console.log("Final new listing = ",listing);
+        // console.log(`Listing ${listing.title} has been editted and saved successfully`);
         req.flash("success", "Listing Editted Successfully");
         res.redirect(`/listing/show/${id}`);
     }catch(err){
-        console.log(`Error in editting and saving the changes in the listing ${listing.title} : ${err}`)
+        // console.log(`Error in editting and saving the changes in the listing ${listing.title} : ${err}`)
         req.flash("error", " Failed to  Edit Listing");
         res.redirect(`/listing/show/${id}`);
     }
